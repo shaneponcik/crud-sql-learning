@@ -20,9 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   require 'connectToDB.php';
   $connection = connectToDatabase("localhost","root","","cycling");
 
-  $year = $_POST['year'];
-  $bike = $_POST['bike'];
-  $kit = $_POST['kit'];
+  $year = test_input($_POST['year']);
+  $bike = test_input($_POST['bike']);
+  $kit = test_input($_POST['kit']);
 
   //need to update db with submittion
   $sql = "INSERT INTO gear(year,bike,kit) VALUES ($year,'$bike','$kit')";

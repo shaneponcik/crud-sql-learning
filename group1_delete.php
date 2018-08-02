@@ -15,7 +15,7 @@ $connection = connectToDatabase("localhost","root","","cycling");
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-  $rownum = $_POST['row'];
+  $rownum = test_input($_POST['row']);
 
   $counter = 1;
   $results = $connection->query("SELECT * FROM RESULTS");

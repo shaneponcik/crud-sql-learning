@@ -17,9 +17,9 @@ $connection = connectToDatabase("localhost","root","","cycling");
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-  $rownum = $_POST['row'];
-  $field = $_POST['field'];
-  $value = $_POST['value'];
+  $rownum = test_input($_POST['row']);
+  $field = test_input($_POST['field']);
+  $value = test_input($_POST['value']);
 
   $counter = 1;
   $gear = $connection->query("SELECT * FROM GEAR");

@@ -20,9 +20,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $connection = connectToDatabase("localhost","root","","cycling");
 
   //need to update db with submittion
-  $race = $_POST['race'];
-  $result = $_POST['result'];
-  $year = $_POST['year'];
+  $race = test_input($_POST['race']);
+  $result = test_input($_POST['result']);
+  $year = test_input($_POST['year']);
 
   $sql = "INSERT INTO `results`(`race`, `result`, `year`) VALUES ('$race', '$result', $year)";
 

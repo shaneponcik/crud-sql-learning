@@ -14,4 +14,11 @@ function connectToDatabase($servername,$username, $password, $dbName){
     echo "Connection failed: " . $e->getMessage();
   }
 }
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
  ?>
