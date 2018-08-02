@@ -24,6 +24,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $result = test_input($_POST['result']);
   $year = test_input($_POST['year']);
 
+  if($year != '2016' || $year != '2017' || $year != '2018')
+    throw new Exception("Invalid year entry");
+
   $sql = "INSERT INTO `results`(`race`, `result`, `year`) VALUES ('$race', '$result', $year)";
 
   $connection->query($sql);

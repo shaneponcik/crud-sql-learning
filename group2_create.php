@@ -24,6 +24,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   $bike = test_input($_POST['bike']);
   $kit = test_input($_POST['kit']);
 
+  if($year != '2016' || $year != '2017' || $year != '2018')
+    throw new Exception("Invalid year entry");
+
   //need to update db with submittion
   $sql = "INSERT INTO gear(year,bike,kit) VALUES ($year,'$bike','$kit')";
   //echo $sql;
